@@ -49,7 +49,46 @@ The user model also maintains direct relationships with:
 
 This keeps the database structure focused and easier to maintain within the project scope.
 
-The most important field is `skill_level`. During the RSVP process, the system validates whether a user's skill level matches the event's required skill range. This helps reduce mismatched games before they occur and supports more balanced participation.
+### Database Architecture Schema (ERD Snippet)
+
+Below is the clean relational setup handling our context-driven profile logic:
+
+```mermaid
+erDiagram
+users {
+integer user_id PK
+text username
+text skill_level
+text bio
+text availability
+text member_since
+}
+posts {
+integer id PK
+integer user_id FK
+text title
+text content
+text category
+text timestamp
+}
+comments {
+integer id PK
+integer user_id FK
+integer post_id FK
+text content
+text timestamp
+}
+event_attendance {
+integer user_id FK
+integer event_id FK
+text status
+text rsvp_date
+}
+
+users ||--o{ posts : "authors"
+users ||--o{ comments : "writes"
+users ||--o{ event_attendance : "registers"
+```
 
 ## Building Trust Without Social Features
 

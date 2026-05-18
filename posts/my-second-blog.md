@@ -33,14 +33,20 @@ This creates what I describe as an **engagement flywheel**. Forum activity encou
 
 ## The Architecture Decision
 
-This shift had direct implications for the sitemap and navigation structure.
+This structural shift had direct implications for the sitemap and core navigation hierarchy. By restructuring our layout, we systematically prioritised psychological safety and user onboarding over transactional actions.
 
-- **Home** displays a subtle event carousel alongside recent forum posts as the primary content
-- **Forum** becomes a primary navigation tab rather than being hidden under a broader Community section
-- **Events** remains an essential feature but is discovered more organically
-- **Courts** and **Profile** function as supporting tabs accessed when needed
+- **Home (Landing)**: Displays a lightweight event carousel alongside a prioritised feed of recent forum posts.
+- **Forum Feed**: Established as a primary root navigation node rather than being nested inside a general subsection.
+- **Event Discovery**: Remains a key path but is decoupled from immediate landing views to reduce initial friction.
+- **Courts & Profiles**: Function as lazy-loaded, context-driven utility routes rather than high-level social directories.
 
-The key insight behind this structure is that *trust precedes action*. Allowing users to engage with asynchronous content at their own pace reduces the pressure of immediately joining a game with strangers.
+### Deployed Information Architecture
+
+To visualise how this information layout works, we structured our application's path hierarchy around a content-first ingestion funnel:
+
+![Figure 1: Deployed application sitemap illustrating a decentralised root tab navigation layout focused on forum categories](/assets/diagrams/sitemap.png)
+
+*Figure 1: Our verified application sitemap structure. By allocating primary root-level navigation tabs to the asynchronous `Forum` rather than transactional match-making queues, we ensure the first view eliminates high-pressure choices. The hierarchy maps cleanly to standard REST routing endpoints (`/forum`, `/events`), allowing the frontend template engines to isolate content dependencies cleanly.*
 
 ## Technical and UX Implications
 

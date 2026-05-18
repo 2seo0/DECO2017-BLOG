@@ -24,8 +24,12 @@ However, my research revealed something important: most players are not looking 
 This insight fundamentally shifted my design direction. Rather than building a social network with profiles as the central feature, I decided to design an **event coordination platform supported by trust signals**.
 
 ### Social Network vs. Coordination Hub
+
+To solidify our application scope before jumping into backend models, we mapped out a structural comparison between generic social platforms and our streamlined design architecture. This helped our engineering group bypass non-essential database logic entirely.
+
 ![Bespoke Badminton Hub vs Generic Social Network Platform Architecture Concept](/assets/diagrams/comparison-diagram.png)
 
+*Figure 1: Conceptual architectural pivot. Instead of establishing a sprawling social graph table system requiring complex follow/friend join logic (left), our platform consolidates operations around an event-coordination loop (right). This ensures player profiles are requested lazily and natively from active match tables, preserving database simplicity.*
 
 ## The MoSCoW Reality Check
 

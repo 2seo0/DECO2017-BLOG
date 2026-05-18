@@ -99,6 +99,15 @@ Removing reviews also improves usability and accessibility. Users can quickly ta
 
 This reduces cognitive load and supports faster task completion, particularly for users trying to organise games efficiently.
 
+
+### Visualizing Scope Reduction: The Task-Focused Court Map
+
+To bridge our refined functional requirements with our backend schema constraints, we developed a simplified map interface. Rather than showing a crowded social dashboard or generic review feeds, the interface focuses entirely on reducing task execution time for organizing real-world games.
+
+![Figure 1: UI wireframe showcasing the court discovery sheet populated with structural facility metadata tags](/assets/diagrams/courtmap.png)
+
+*Figure 1: Our map interface design. Instead of devoting screen layout real estate to user-generated reviews, comment textareas, or subjective star ratings, the interface prioritizes structured, immutable metadata fields (e.g., specific tags mapping to `ceiling_height` or `amenities`) that answer logistical questions instantly.*
+
 ## Looking Ahead
 
 This decision reflects a broader design principle that continues throughout the project: remove features that duplicate systems users already have access to elsewhere.
