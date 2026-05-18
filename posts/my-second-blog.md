@@ -1,38 +1,69 @@
 ---
-title: Week 8':' Architecture of a Community - Reasoning through Flow and Friction
-date: 2026-04-25
+title: "Week 7: Forum First Architecture"
+date: 2026-04-17
 author: Isabelle Lee
-summary: This post documents the transition from research to execution by justifying the sitemap and wireframe designs for the Badminton Community Hub.
+summary: "Why Forums Come First: Reframing the Badminton Hub as Content Driven, Not Event Driven"
 tags:
-  - Interaction Design
-  - Functional Requirements
+  - InteractionDesign
+  - FunctionalRequirements
   - Wireframes
 ---
-## Interpreting the Brief: The Hybrid Community Hub
-Following my initial research into the badminton community, I have moved beyond the abstract **"game finder"** concept to a concrete design documented through a Sitemap and Wireframes. To align with the Bla+Bla Corp mission of creating bespoke, user-centric experiences, I have used these artifacts to balance two distinct user needs: physical match coordination and digital social interaction. This blog post focuses on how I reasoned through these design decisions to ensure the application solves real-world logistical friction.
 
-* The Sitemap: Justifying a Dual-Focus Homepage
-My sitemap reveals a key design decision: elevating the Forum to a primary navigation element alongside Matchmaking.
+# Why Forums Come First: Reframing the Badminton Hub as Content Driven, Not Event Driven
 
+When I first sketched my sitemap, the Events tab was the hero of the homepage. Games Today, Upcoming Events, and Filter by Skill were all positioned as the primary features. However, I quickly realised that this structure could overwhelm new users.
 
-* The Rationale: Current community engagement is often restricted to the physical court, which requires significant time, energy, and financial investment.
+## The Pressure Problem
 
+Imagine opening the app for the first time and immediately seeing "Games happening today. RSVP now!" alongside a list of unfamiliar players. For experienced members this may feel exciting, but for new users it introduces pressure straight away.
 
-* The Decision: By placing the forum on the homepage, I am creating a space for indirect conversation. This lowers the barrier to entry for a diverse, multi-generational community who want to discuss strategy or gear without the pressure of an immediate meetup.
+This reflected an issue I identified during research. Players want to join games, but the main friction is not technical. It is social. New players often do not know anyone in the community, feel uncertain about their skill level, and want reassurance that the environment feels welcoming before committing to an event.
 
+## Enter the Forum First Model
 
-* Trade-off: I have de-prioritized "Gear Marketplaces" as a "Could-Have" feature to ensure the core social-functional hybrid remains technically feasible within the project timeline.
+By placing forum content on the homepage instead of prioritising events, the first user experience changes entirely.
 
-## The Wireframe: Solving the "Organizer Bottleneck"
-A major pain point identified in my research was the inefficiency of joining socials, which currently requires manually contacting an organizer via fragmented group chats to verify skill levels. To solve this, my wireframes introduce an automated Skill-Based RSVP system.
+1. The user lands on the homepage and scrolls through community posts
+2. They read gear tips, training advice, event recaps, and community discussions
+3. Familiarity and trust begin to build through relatable interactions
+4. Event related posts naturally spark curiosity about upcoming games
+5. The user navigates to the Events tab and RSVPs with more confidence
 
-I have made a concrete technical decision (LO2) to implement a mandatory skill-categorization field during user registration. Rather than a vague 1–10 scale, I have defined three descriptive tiers to ensure data integrity and user trust:  
+This creates what I describe as an **engagement flywheel**. Forum activity encourages event participation, events create shared experiences, and those experiences generate new forum content.
 
-* Beginner: Learning basic mechanics and maintaining long rallies. 
+## The Architecture Decision
 
-* Intermediate: Confident in clears, lifts, drops, and basic doubles rotation.
+This shift had direct implications for the sitemap and navigation structure.
 
-* Advanced+: Full mastery of all shots, strategy, and high-intensity play.
+- **Home** displays a subtle event carousel alongside recent forum posts as the primary content
+- **Forum** becomes a primary navigation tab rather than being hidden under a broader Community section
+- **Events** remains an essential feature but is discovered more organically
+- **Courts** and **Profile** function as supporting tabs accessed when needed
 
-### Technical Alignment and Feasibility
-This decision moves the "friction" from the organizer to the initial user onboarding. While this adds complexity to the backend—requiring the system to validate a user's skill_level against the event_requirement before allowing an RSVP—it directly supports the goal of high-quality community interaction. This intentional alignment between user needs (efficient joining) and technical architecture (relational data validation) replaces a manual social hurdle with a streamlined digital solution.
+The key insight behind this structure is that *trust precedes action*. Allowing users to engage with asynchronous content at their own pace reduces the pressure of immediately joining a game with strangers.
+
+## Technical and UX Implications
+
+This architectural shift also influences several technical and interaction design decisions.
+
+### Post Categories
+
+The forum requires structured post categories such as Gear, Training, Event Highlights, and Community Talk. This prevents the forum from becoming a second event listing system and encourages users to share experiences, opinions, and advice rather than only logistics.
+
+### Context Based Profiles
+
+Profiles remain visible only within context, such as when selecting an author's name or tapping an attendee avatar. This reinforces the platform's purpose as a coordination hub rather than a social networking platform. Profiles answer practical questions such as whether advice feels credible or what skill level other attendees may have.
+
+### Event Visibility Without Pressure
+
+The homepage still includes an event carousel, but it functions as a passive invitation rather than an aggressive call to action. The interface suggests opportunities without forcing immediate commitment.
+
+## The Trade Off
+
+This model intentionally delays the primary call to action. From a business perspective, some may argue that the homepage should maximise immediate event clicks and RSVPs.
+
+However, my research suggests that users who feel informed and comfortable are more likely to RSVP confidently and attend consistently. Prioritising trust and familiarity may lead to fewer impulsive sign ups, but it supports higher quality participation and stronger long term engagement.
+
+## Looking Ahead
+
+With the forum first structure now established, the next challenge is developing wireframes that validate this interaction flow. The interface needs to demonstrate that browsing forum content naturally encourages event discovery rather than distracting users from it.

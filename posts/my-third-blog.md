@@ -1,34 +1,80 @@
 ---
-title: "Week 9: Data Requirements and Technical Architecture"
-date: 2026-05-02
+title: "Week 8: Context Based Profiles & Data Integrity"
+date: 2026-04-25
 author: Isabelle Lee
-summary: Bridging the gap between user needs and system implementation through a robust relational database design for the Badminton Hub.
+summary: "Profiles Without a Members Tab: How Context Based Profiles Support Coordination Rather Than Networking"
 tags:
-  - Technical Reasoning
-  - Database Design
-  - 
+  - TechnicalReasoning
+  - DatabaseDesign
+  - DataIntegrity
 ---
-## Aligning Requirements with Implementation
 
-This week, my focus shifted from high-level interface design to the underlying technical architecture of the Badminton Community Hub. Translating my functional requirements into a formal Entity Relationship Diagram (ERD) and SQL schema forced me to make critical decisions regarding data integrity, scalability, and system performance.
+# Profiles Without a Members Tab: How Context Based Profiles Support Coordination Rather Than Networking
 
-### 1. The Decision: Relational Integrity over Flat Data
-In my initial brainstorming, I considered a "flat" data model where venue details were simply text strings stored within a match record. However, my final implementation utilizes a highly relational structure with a dedicated `courts` table and junction tables for `amenities` and `access`.
+One of the more contentious design decisions in this project was removing the Members discovery tab entirely. Players can still access detailed profiles including skill level, activity history, and games attended, but only within specific contexts such as selecting an author's name on a forum post or tapping an attendee avatar within an RSVP modal.
 
-**Reasoning:**
-Badminton players rely heavily on specific venue metadata, such as lighting quality or ceiling height. By implementing a relational structure, I ensure **Data Integrity**. If users were allowed to type locations manually, the data would become inconsistent (e.g., "Syd Uni" vs "Sydney University"). Using a central `courts` table allows for reliable filtering—a core functional requirement—enabling users to accurately search for courts with specific features like "Disability Access" or "Pro Lighting."
+## The Justification: Context Over Browsing
 
-### 2. Implementation: Managing Many-to-Many Relationships
-A significant technical challenge was managing how players interact with events. I implemented an `event_attendance` junction table to handle the many-to-many relationship between users and matches.
+My research suggested that players are not interested in casually browsing member profiles. Instead, they are looking for answers to practical questions during moments of decision making.
 
-```sql
--- Event attendance (many-to-many junction)
-CREATE TABLE IF NOT EXISTS event_attendance (
-    user_id INTEGER NOT NULL,
-    event_id INTEGER NOT NULL,
-    status TEXT DEFAULT 'confirmed',
-    rsvp_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (user_id, event_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE
-);
+- Who is this person giving advice?
+- What skill level are the other attendees?
+- Can I trust this organiser and event?
+
+By anchoring profiles to these moments, the platform prioritises credibility and reassurance rather than passive browsing. Profiles become functional trust signals rather than social networking tools.
+
+## The Technical Implication: Simpler Data Models
+
+Removing member discovery had a significant impact on the database structure and overall system complexity.
+
+Without profile browsing or social networking features, the application no longer required:
+- follower or friend relationships
+- member discovery algorithms
+- profile ranking systems
+- follower lists or engagement metrics
+
+Instead, the `users` table only requires information relevant to coordination and participation.
+
+- `user_id`
+- `username`
+- `skill_level`
+- `bio`
+- `availability`
+- `member_since`
+
+The user model also maintains direct relationships with:
+- `posts`
+- `comments`
+- `event_attendance`
+
+This keeps the database structure focused and easier to maintain within the project scope.
+
+The most important field is `skill_level`. During the RSVP process, the system validates whether a user's skill level matches the event's required skill range. This helps reduce mismatched games before they occur and supports more balanced participation.
+
+## Building Trust Without Social Features
+
+Removing social networking systems does not mean profiles become empty or impersonal. Instead, profiles communicate reliability and experience through lightweight trust indicators.
+
+### Skill Rating
+
+Profiles display a simple skill rating system validated through community moderation rather than algorithmic ranking. This supports transparency without encouraging unhealthy competition.
+
+### Activity Indicators
+
+Users can view information such as games attended, posts created, and comments contributed. These indicators provide evidence of participation and community involvement.
+
+### Membership Duration
+
+Displaying a member since date helps users understand whether someone is new to the platform or already active within the community. Importantly, the design avoids presenting newer members as outsiders.
+
+Together, these signals build trust while avoiding the maintenance burden of a full social graph. The platform is designed to support coordination and participation rather than maximise engagement metrics or time spent on the application.
+
+## Accessibility and Cognitive Load
+
+Removing member discovery also creates accessibility benefits. Fewer navigation options simplify the interface and reduce cognitive load for new users. Profiles only appear when relevant to the current task, allowing users to focus on joining games and interacting with content rather than navigating unnecessary social features.
+
+## Looking Ahead
+
+The next stage of the project will focus on the court map and database schema. The same principle continues to guide these decisions: remove features that are not central to solving the coordination problem.
+
+For example, courts will include practical information such as location, facilities, operating hours, and pricing, but they will not include user review systems. The goal of the platform is to help players organise games efficiently, not to function as a review platform for badminton venues.

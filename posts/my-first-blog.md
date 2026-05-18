@@ -1,39 +1,69 @@
 ---
-title: Week 7':' The 'Why' and the 'What' – Defining Functional Requirements
-date: 2026-4-17
+title: "Week 6: Interpreting the Brief & Defining Requirements"
+date: 2026-04-10
 author: Isabelle Lee
-summary: Transitioning from user research to technical reality by defining the core features and rationale for my badminton community app.
+summary: "Beyond the Feature List: Why My Badminton Hub Prioritises Coordination Over Networking"
 tags:
   - FunctionalRequirements
   - UserStories
   - MoSCoW
 ---
-## Bridging the Gap Between "What" and "Why"
 
-This week, the focus shifted from broad user research to the granular reality of product development: defining **Functional Requirements**. In previous weeks, my research into the local badminton community highlighted a recurring frustration—the logistical "messiness" of organising social games. This week, I translated those frustrations into a concrete roadmap for my application.
+# Beyond the Feature List: Why My Badminton Hub Prioritises Coordination Over Networking
 
-### The Rationale: The "Why"
-Before listing features, I had to ground my decisions in the user experience. My research identified two primary user archetypes: the **Competitive Climber**, who seeks balanced matches to improve their ranking, and the **Social Organiser**, who is burdened by the administrative overhead of booking courts and collecting payments. 
+In the first week of this project, I faced a critical question: *what problem does my badminton app actually solve?*
 
-The "Why" behind my project is simple: to reduce the friction of community sports. If the logistics are difficult, the community shrinks. By automating the "boring" parts of badminton—scheduling and cost-splitting—I can allow players to focus on the game itself.
+My research into the local badminton community revealed a frustration that cuts across skill levels and age groups: organising games is unnecessarily difficult. Players currently rely on fragmented group chats, outdated Facebook posts, and manual text exchanges to coordinate matches. A secondary issue also emerged. Players often do not know the skill levels of others joining a session, resulting in mismatched games and frustrating experiences.
 
-### The Functional Requirements: The "What"
-To define the system's behaviour, I utilised **User Stories** to ensure every feature served a direct purpose. For example:
-* *As a player, I want to see the skill levels of others in a session so that I can join games that match my ability.*
-* *As an organiser, I want a centralised RSVP list so that I can manage court capacity effectively.*
+## The Temptation: Building a Social Network
 
-To manage the scope of this project, I applied the **MoSCoW** prioritisation framework. This was a vital exercise in distinguishing between "exciting" ideas and "essential" functionality.
+One possible direction was to create a "Badminton Instagram" style platform centred around discovering people, browsing profiles, and networking with other players. The brief even suggested member discovery as a potential feature.
 
-| Priority | Feature | Justification |
-| :--- | :--- | :--- |
-| **Must Have** | Skill-level filtering & RSVP system | Core to solving the mismatch and overbooking issues found in research. |
-| **Should Have** | In-app court cost calculator | A significant "pain point" solver that differentiates this from a generic chat app. |
-| **Could Have** | Peer-review/Rating system | Enhances community trust but isn't required for a functional MVP. |
-| **Won't Have** | Live video streaming of matches | Technologically out of scope and not a primary user need at this stage. |
+However, my research revealed something important: most players are not looking to make friends with random people online. Instead, they simply want to organise enjoyable games with players of compatible skill levels.
 
----
+This insight fundamentally shifted my design direction. Rather than building a social network with profiles as the central feature, I decided to design an **event coordination platform supported by trust signals**.
 
-### Reflection on Feasibility
-Moving from the "Why" to the "What" forced me to confront the technical reality of my design. While a "Tournament Bracket Generator" would be a fantastic addition, I realised that perfecting the **Matchmaking Algorithm** (ensuring players of similar levels find each other) is the true priority. 
+### Social Network vs. Coordination Hub
+![Bespoke Badminton Hub vs Generic Social Network Platform Architecture Concept](/assets/diagrams/comparison-diagram.png)
 
-By narrowing my focus to these specific functional requirements, I now have a clear checklist for my upcoming wireframes. The goal for next week is to ensure the interface makes these complex background tasks—like calculating costs or filtering levels—feel invisible and effortless for the user.
+
+## The MoSCoW Reality Check
+
+Applying the MoSCoW framework forced me to make deliberate decisions about scope and priorities.
+
+### Must Have
+- One tap RSVP system to reduce organisational friction
+- Skill level filtering and display to minimise mismatched games
+- Forum for Q&A and discussion to support organic community building
+- Location aware court map to reduce search friction
+- User profiles showing activity history to provide credibility and context
+
+### Should Have
+- Photo uploads for event recaps
+- Notifications for RSVP updates or cancellations
+- Search functionality within the forum
+
+### Won't Have
+- Dedicated member browsing tab
+- Court review system
+- Leaderboards or rankings
+- Gear marketplace
+
+## A Key Technical Decision: Removing Member Discovery
+
+This became the project's biggest pivot.
+
+Profiles still exist within the system, but they only appear contextually. For example, users can click an author's name in the forum or tap an attendee avatar in an RSVP list. However, there is no standalone "Members" tab.
+
+This decision came from the belief that profiles are most valuable when tied to trust and participation rather than passive browsing. A player wants to know who they are playing with or whether someone's advice is credible, not endlessly scroll through user profiles.
+
+Removing member discovery also significantly reduced technical complexity. Without follower, friend, or social graph systems, the database structure became simpler and required less state management within the application. This made the overall scope more achievable within the semester timeframe. While this decision may reduce opportunities for broader social networking, it keeps the platform focused on efficient match coordination rather than passive engagement.
+More importantly, this decision reinforced the forum first structure that later shaped the project. Community interaction became the entry point rather than profile discovery.
+
+## Looking Ahead
+
+These constraints are not limitations. They provide clarity.
+
+By rejecting the generic social network model and evaluating every feature against a single question, *does this reduce coordination friction?*, I now have a much more coherent product direction and roadmap.
+
+The next stage of the project will involve translating these requirements into a sitemap, user flows, and database relationships that support fast and intuitive event coordination.
