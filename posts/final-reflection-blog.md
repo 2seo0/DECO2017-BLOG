@@ -60,6 +60,7 @@ After tutors described the original homepage as generic, I redesigned it on the 
 </table>
 
 <p><em>Table 1: Lighthouse audit scores across the four core pages of RallyClub.</em></p>
+
 ## User Experience and Accessibility
 
 Structured testing with two participants who had no prior exposure to the app produced consistent findings and surfaced issues that weren't visible from the inside.
