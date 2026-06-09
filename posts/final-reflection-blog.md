@@ -152,15 +152,44 @@ User profiles were also listed as a Must Have, but the implementation ended up m
 
 The mobile audience was acknowledged throughout but never formally scoped, and that was a requirements gap rather than a reasonable constraint. A second audience with different device needs should have had its own requirements from the beginning, even if those were explicitly deprioritised.
 
-| Original Must Have | Final Outcome | Assessment |
-|-------------------|---------------|------------|
-| One-tap RSVP system | ✓ Delivered | Worked intuitively, both testers completed without help |
-| Skill level filtering and display | ✓ Delivered, but buried in dropdown | Core feature undersold by its placement |
-| Forum for Q&A and discussion | ✓ Delivered | Validated by testing; may have been over-prioritised vs. events |
-| Location-aware court map | ✓ Delivered | Well-received; radius filtering identified as missing |
-| User profiles with activity history | Delivered at reduced scope | Deliberate privacy decision; testing suggests slightly too minimal |
+<table class="evidence-table">
+  <thead>
+    <tr>
+      <th>Original Must Have</th>
+      <th>Final Outcome</th>
+      <th>Assessment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>One-tap RSVP system</td>
+      <td>✓ Delivered</td>
+      <td>Worked intuitively, both testers completed without help</td>
+    </tr>
+    <tr>
+      <td>Skill level filtering and display</td>
+      <td>✓ Delivered, but buried in dropdown</td>
+      <td>Core feature undersold by its placement</td>
+    </tr>
+    <tr>
+      <td>Forum for Q&amp;A and discussion</td>
+      <td>✓ Delivered</td>
+      <td>Validated by testing; may have been over-prioritised vs. events</td>
+    </tr>
+    <tr>
+      <td>Location-aware court map</td>
+      <td>✓ Delivered</td>
+      <td>Well-received; radius filtering identified as missing</td>
+    </tr>
+    <tr>
+      <td>User profiles with activity history</td>
+      <td>Delivered at reduced scope</td>
+      <td>Deliberate privacy decision; testing suggests slightly too minimal</td>
+    </tr>
+  </tbody>
+</table>
 
-*Table 3: Original Must Have requirements from Week 6 compared against the final prototype.*
+<p><em>Table 3: Original Must Have requirements from Week 6 compared against the final prototype.</em></p>
 
 ---
 
