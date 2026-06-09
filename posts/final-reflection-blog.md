@@ -22,7 +22,7 @@ After tutors described the original homepage as generic, I redesigned it on the 
 
 | | |
 |:---:|:---:|
-| <img src="/DECO2017-BLOG/assets/evidence/homepage-before.png" alt="Homepage before tutor feedback" width="420"> | <img src="/DECO2017-BLOG/assets/evidence/homepage-after.png" alt="Homepage after tutor feedback" width="420"> |
+| <img src="assets/evidence/homepage-before.png" alt="Homepage before tutor feedback" width="420"> | <img src="assets/evidence/homepage-after.png" alt="Homepage after tutor feedback" width="420"> |
 
 *Figure 1: Homepage before (left) and after (right) the redesign prompted by tutor feedback. The original layout did not surface the platform's core features. Adding the skill-matched game card and FAQ directly to the landing view addressed both the feedback and the Lighthouse score.*
 
@@ -68,7 +68,7 @@ The WAVE audit on the forum page was harder to sit with. As shown in Figure 2, i
 
 | | |
 |:---:|:---:|
-| <img src="/DECO2017-BLOG/assets/evidence/wave-forum.png" alt="WAVE audit forum page" width="420"> | <img src="/DECO2017-BLOG/assets/evidence/wave-profile.png" alt="WAVE audit profile page" width="420"> |
+| <img src="assets/evidence/wave-forum.png" alt="WAVE audit forum page" width="420"> | <img src="assets/evidence/wave-profile.png" alt="WAVE audit profile page" width="420"> |
 
 *Figure 2: WAVE audit results for the Court Talk forum page (left) and profile page (right). The forum scored 1.7 out of 10 with 60 errors and 60 contrast errors; the profile page scored 6.4 out of 10 with more contained issues consistent with the Lighthouse findings.*
 
@@ -80,7 +80,7 @@ The improvements I'd prioritise are all grounded in what testing revealed. The m
 
 | |
 |:---:|
-| <img src="/DECO2017-BLOG/assets/evidence/events-page.png" alt="RallyClub events page showing skill level as a filter dropdown" width="840"> |
+| <img src="assets/evidence/events-page.png" alt="Events page" width="840"> |
 
 *Figure 3: The events page in the final prototype. Skill level filtering appears as one option within a dropdown rather than as the primary entry point, underselling the feature the platform was built around.*
 
