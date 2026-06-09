@@ -27,15 +27,39 @@ After tutors described the original homepage as generic, I redesigned it on the 
 *Figure 1: Homepage before (left) and after (right) the redesign prompted by tutor feedback. The original layout did not surface the platform's core features. Adding the skill-matched game card and FAQ directly to the landing view addressed both the feedback and the Lighthouse score.*
 
 
-| Page | Lighthouse Score | Primary Issue |
-|------|-----------------|---------------|
-| Home | 100 | None identified |
-| Forum | 92 | Missing alt text, unlabelled select elements, contrast failures |
-| Events | 85 | Render-blocking assets adding ~420ms (local image folder) |
-| Profile | 78 | Unlabelled select elements, contrast failures |
+<table class="evidence-table">
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>Lighthouse Score</th>
+      <th>Primary Issue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Home</td>
+      <td>100</td>
+      <td>None identified</td>
+    </tr>
+    <tr>
+      <td>Forum</td>
+      <td>92</td>
+      <td>Missing alt text, unlabelled select elements, contrast failures</td>
+    </tr>
+    <tr>
+      <td>Events</td>
+      <td>85</td>
+      <td>Render-blocking assets adding ~420ms (local image folder)</td>
+    </tr>
+    <tr>
+      <td>Profile</td>
+      <td>78</td>
+      <td>Unlabelled select elements, contrast failures</td>
+    </tr>
+  </tbody>
+</table>
 
-*Table 1: Lighthouse audit scores across the four core pages of RallyClub.*
-
+<p><em>Table 1: Lighthouse audit scores across the four core pages of RallyClub.</em></p>
 ## User Experience and Accessibility
 
 Structured testing with two participants who had no prior exposure to the app produced consistent findings and surfaced issues that weren't visible from the inside.
@@ -46,15 +70,50 @@ The skill level system was the clearest success. Both participants used the skil
 
 The same participant compared the experience to Reddit and Facebook, a validation I hadn't anticipated but which confirmed the community-first design was landing the way it was intended to.
 
-| Task | P1 Result | P2 Result | Key Finding |
-|------|-----------|-----------|-------------|
-| 1: Forum exploration | ✓ Complete | ✓ Complete | P2 compared forum to Reddit/Facebook unprompted |
-| 2: Find & RSVP to event | ✓ Complete | ✓ Complete | Both used skill filter unprompted |
-| 3: Find a court | ✓ Complete | ✓ Complete | P1 noted external link delay; P2 suggested radius filtering |
-| 4: Check attendee profiles | Completed | Completed | Both searched for a members page that doesn't exist |
-| Overall ease rating | 5/5 | 4/5 | |
+<table class="evidence-table">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>P1 Result</th>
+      <th>P2 Result</th>
+      <th>Key Finding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1: Forum exploration</td>
+      <td>✓ Complete</td>
+      <td>✓ Complete</td>
+      <td>P2 compared the forum to Reddit/Facebook unprompted</td>
+    </tr>
+    <tr>
+      <td>2: Find & RSVP to event</td>
+      <td>✓ Complete</td>
+      <td>✓ Complete</td>
+      <td>Both used the skill filter unprompted</td>
+    </tr>
+    <tr>
+      <td>3: Find a court</td>
+      <td>✓ Complete</td>
+      <td>✓ Complete</td>
+      <td>P1 noted external link delay; P2 suggested radius filtering</td>
+    </tr>
+    <tr>
+      <td>4: Check attendee profiles</td>
+      <td>Complete</td>
+      <td>Complete</td>
+      <td>Both searched for a members page that does not exist</td>
+    </tr>
+    <tr>
+      <td>Overall ease rating</td>
+      <td>5/5</td>
+      <td>4/5</td>
+      <td>Both participants completed the core tasks successfully</td>
+    </tr>
+  </tbody>
+</table>
 
-*Table 2: User testing task completion summary across two participants (8 June 2026).*
+<p><em>Table 2: User testing task completion summary across two participants (8 June 2026).</em></p>
 
 Two usability gaps emerged consistently across both sessions. The first was event card affordance. Both participants expected the entire card to be clickable and attempted to interact with different areas before realising only the title was a link. Participant 1 described it directly:
 

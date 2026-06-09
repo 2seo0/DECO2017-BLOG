@@ -61,3 +61,20 @@ ul.tags-list {
 ul.post-list{
     list-style: none;
 }
+
+.evidence-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.evidence-table th,
+.evidence-table td {
+  border: 1px solid #999;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.evidence-table th {
+  font-weight: 700;
+}
