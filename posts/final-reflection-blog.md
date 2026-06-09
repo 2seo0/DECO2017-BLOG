@@ -20,12 +20,12 @@ The court map had a noticeable loading delay during use, something user testing 
 
 After tutors described the original homepage as generic, I redesigned it on the final day and the score reached 100, evidence that the iteration addressed the right problem. The profile page scoring 78 was the most surprising result given how minimal that page is. Lighthouse flagged unlabelled select elements and contrast failures, which WAVE later confirmed: 4 errors, 3 contrast errors, and an AIM score of 6.4 out of 10. The events page scored 85, with render-blocking requests adding approximately 420ms traced to static image assets loaded directly from the project folder. In production, CDN delivery and image compression would resolve this. Within the prototype timeframe, it was a conscious trade-off in favour of completing core functionality first.
 
-<div style="display:flex; justify-content:space-between; gap:1rem;">
-  <img src="/assets/evidence/homepage-before.png" alt="Original homepage design before tutor feedback" width="48%">
-  <img src="/assets/evidence/homepage-after.png" alt="Redesigned homepage after tutor feedback" width="48%">
-</div>
+| | |
+|:---:|:---:|
+| <img src="../assets/evidence/homepage-before.png" alt="Homepage before tutor feedback" width="420"> | <img src="../assets/evidence/homepage-after.png" alt="Homepage after tutor feedback" width="420"> |
 
 *Figure 1: Homepage before (left) and after (right) the redesign prompted by tutor feedback. The original layout did not surface the platform's core features. Adding the skill-matched game card and FAQ directly to the landing view addressed both the feedback and the Lighthouse score.*
+
 
 | Page | Lighthouse Score | Primary Issue |
 |------|-----------------|---------------|
@@ -66,10 +66,9 @@ The second session also surfaced smaller friction points: logout button placemen
 
 The WAVE audit on the forum page was harder to sit with. As shown in Figure 2, it scored 1.7 out of 10 with 60 errors, 60 contrast errors, and 92 alerts. Errors were concentrated on avatar images missing alt text across every post and unlabelled category filter buttons. These issues didn't prevent task completion in either testing session, but they represent a real failure for users relying on assistive technologies. My Week 10 blog planned WAVE, axe DevTools, keyboard-only, and colour blindness testing. In practice, only Lighthouse and WAVE were completed. That gap is something I have to own.
 
-<div style="display:flex; justify-content:space-between;">
-  <img src="../assets/evidence/wave-forum.png" alt="WAVE audit forum page" width="48%">
-  <img src="../assets/evidence/wave-profile.png" alt="WAVE audit profile page" width="48%">
-</div>
+| | |
+|:---:|:---:|
+| <img src="../assets/evidence/wave-forum.png" alt="WAVE audit forum page" width="420"> | <img src="../assets/evidence/wave-profile.png" alt="WAVE audit profile page" width="420"> |
 
 *Figure 2: WAVE audit results for the Court Talk forum page (left) and profile page (right). The forum scored 1.7 out of 10 with 60 errors and 60 contrast errors; the profile page scored 6.4 out of 10 with more contained issues consistent with the Lighthouse findings.*
 
@@ -79,7 +78,9 @@ The mobile responsiveness gap wasn't a planning oversight. It was a communicatio
 
 The improvements I'd prioritise are all grounded in what testing revealed. The most important is redesigning the events page so skill level is the visual centrepiece rather than a filter dropdown. It's the platform's core differentiator and currently the last thing a user encounters rather than the first. Second is making the full event card clickable, which both participants expected. After that: logo navigation, logout placement, forum sizing on desktop, and distance-based court filtering, which the second participant suggested and which would make the court map significantly more practical for anyone planning around transport.
 
-![RallyClub events page showing skill level as a filter dropdown](/assets/evidence/events-page.png)
+| |
+|:---:|
+| <img src="../assets/evidence/events-page.png" alt="RallyClub events page showing skill level as a filter dropdown" width="840"> |
 
 *Figure 3: The events page in the final prototype. Skill level filtering appears as one option within a dropdown rather than as the primary entry point, underselling the feature the platform was built around.*
 
