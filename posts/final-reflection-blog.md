@@ -1,5 +1,5 @@
 ---
-title: "Looking Back — What RallyClub Actually Became"
+title: "A3 Final Reflection"
 date: 2026-06-08
 author: Isabelle Lee
 summary: "From Planning to Prototype: An Honest Evaluation of RallyClub's Performance, Usability, and What I'd Do Differently"
