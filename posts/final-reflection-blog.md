@@ -20,9 +20,9 @@ The court map had a noticeable loading delay during use, something user testing 
 
 After tutors described the original homepage as generic, I redesigned it on the final day and the score reached 100, evidence that the iteration addressed the right problem. The profile page scoring 78 was the most surprising result given how minimal that page is. Lighthouse flagged unlabelled select elements and contrast failures, which WAVE later confirmed: 4 errors, 3 contrast errors, and an AIM score of 6.4 out of 10. The events page scored 85, with render-blocking requests adding approximately 420ms traced to static image assets loaded directly from the project folder. In production, CDN delivery and image compression would resolve this. Within the prototype timeframe, it was a conscious trade-off in favour of completing core functionality first.
 
-<div style="display:flex; justify-content:space-between;">
-  <img src="../assets/evidence/homepage-before.png" alt="Original homepage design before tutor feedback" width="48%">
-  <img src="../assets/evidence/homepage-after.png" alt="Redesigned homepage after tutor feedback" width="48%">
+<div style="display:flex; justify-content:space-between; gap:1rem;">
+  <img src="/assets/evidence/homepage-before.png" alt="Original homepage design before tutor feedback" width="48%">
+  <img src="/assets/evidence/homepage-after.png" alt="Redesigned homepage after tutor feedback" width="48%">
 </div>
 
 *Figure 1: Homepage before (left) and after (right) the redesign prompted by tutor feedback. The original layout did not surface the platform's core features. Adding the skill-matched game card and FAQ directly to the landing view addressed both the feedback and the Lighthouse score.*
